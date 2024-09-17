@@ -68,7 +68,7 @@ int countrecr(Node *head){
 int main(){
     Node *n1 = takeinput();
     print(n1);
-    cout<<"Number of element"<<count(n1)<<" "<<endl;
-    cout<<"Number of element"<<countrecr(n1);
+    cout<<"Number of element: "<<count(n1)<<" "<<endl;
+    cout<<"Number of element: "<<countrecr(n1);
     return 0;
 }
