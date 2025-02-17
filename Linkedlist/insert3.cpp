@@ -34,6 +34,7 @@
 }
 
 void print(Node *head){
+    cout<<"The list is : ";
     while(head != NULL){
             cout<< head->data<<" ";
             head = head ->next;
