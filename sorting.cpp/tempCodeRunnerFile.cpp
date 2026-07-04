@@ -1,23 +1,21 @@
-#include<bits/stdc++.h>
-using namespace std;
+#include <bits/stdc++.h>
+ using namespace std;
+  
 
-void bubble_sort(vector<int> &arr,int n){
-
-    for(int i =0;i<n-1;i++){
-        bool isswap = false; 
-        for(int j =0;j<n-i-1;j++){
-            if(arr[j]> arr[j+1]){
-                swap(arr[j],arr[j+1]);
-                isswap=true;
+ void selection_sort(vector<int> &arr,int n){
+    for(int i=0;i<n-1;i++){
+        int minIdx= i;
+        for(int j=i+1;j<n;j++){
+            if(arr[j]<arr[minIdx]){
+                minIdx=j;
             }
         }
-        if(!isswap){
-            return;
-        }
+        swap(arr[i],arr[minIdx]);
     }
-}
+ }
 
-int main(){
+int main() {
+
     int n;
     cout<<"enter the element in the arr: ";
     cin>>n;
@@ -26,9 +24,10 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>arr[i];
     }
-    bubble_sort(arr,arr.size());
+
+    selection_sort(arr,arr.size());
     for(int val:arr){
         cout<<val<<" ";
     }
-
+    return 0;
 }
