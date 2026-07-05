@@ -29,6 +29,7 @@ Node *BuildTree(vector<int> preorder){
     return root;
 
 }
+// pre order traversall
 
 void preOrder(Node* root){
 
@@ -40,14 +41,39 @@ void preOrder(Node* root){
     preOrder(root->right);
 };
 
+//inorder traversal 
+
+void inorder(Node* root){
+    if(root == NULL){
+        return;
+    }
+    inorder(root->left);
+    cout<<root->data;
+    inorder(root->right);
+
+};
+
+void postorder(Node* root){
+    if (root == NULL){
+        return;
+    }
+    postorder(root->left);
+    postorder(root->right);
+    cout<<root->data;
+}
 int main(){
 
     vector<int> preorder = {2, 3, 5, -1, -1, 6, -1, -1, 4, 7, -1, -1, 8, -1, -1};
     Node* root = BuildTree(preorder);
+    //for check the buildtree function and tree build or not 
     // cout<< root->data<<endl;
     // cout<< root->left->data<<endl;
     // cout<< root->right->data;
-    preOrder(root);
+    preOrder(root); // preorder traversall
+    cout<<endl;
+    inorder(root);
+    cout<<endl;
+    postorder(root);
     
 
     return 0;
