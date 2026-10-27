@@ -1,33 +1,43 @@
-#include <bits/stdc++.h>
- using namespace std;
-  
+#include<bits/stdc++.h>
+using namespace std;
 
- void selection_sort(vector<int> &arr,int n){
-    for(int i=0;i<n-1;i++){
-        int minIdx= i;
-        for(int j=i+1;j<n;j++){
-            if(arr[j]<arr[minIdx]){
-                minIdx=j;
-            }
+void insertion_sort(int arr[],int n){
+        
+    for(int i=1;i<n;i++){
+        int current= arr[i];
+        int j=i-1;
+        while(arr[j]>current && j>=0 ){
+            arr[j+1]= arr[j];
+            j--;
         }
-        swap(arr[i],arr[minIdx]);
+        arr[j+1] = current;
     }
- }
+}
 
-int main() {
-
-    int n;
-    cout<<"enter the element in the arr: ";
+int main(){
+    int n; 
+    cout<<"Enter the number size of the array: "<<endl;
     cin>>n;
-    vector<int> arr(n);
-    cout<<"enter the element of the array: ";
-    for(int i=0;i<n;i++){
-        cin>>arr[i];
+
+    int arr[n];
+    cout<<"Enter the element in the array: "<<endl;
+
+    for(int i = 0;i<n;i++){
+            cin>>arr[i];
     }
 
-    selection_sort(arr,arr.size());
+    cout<<"Unsorter array: "<<endl;
+
     for(int val:arr){
         cout<<val<<" ";
     }
-    return 0;
+
+    insertion_sort(arr,n);
+
+    cout<<endl<<"The sorted array :"<<endl;
+
+    for(int val:arr){
+        cout<<val<<" ";
+    }
+    
 }

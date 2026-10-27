@@ -11,7 +11,8 @@
             }
         }
         swap(arr[i],arr[minIdx]);
-    }
+    }/
+    
  }
 
 int main() {
